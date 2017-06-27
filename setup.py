@@ -1,26 +1,27 @@
+#!/usr/bin/env python
+
 from setuptools import setup
 from distutils.sysconfig import get_python_lib
 import glob
 import os
 import sys
 
-if os.path.exists('readme.rst'):
+if os.path.exists('README.md'):
     print("""The setup.py script should be executed from the build directory.
 
-Please see the file 'readme.rst' for further instructions.""")
+Please see the file 'README.md' for further instructions.""")
     sys.exit(1)
 
 
 setup(
-    name = "cythoncmakeexample",
-    package_dir = {'': 'src'},
-    data_files = [(get_python_lib(), glob.glob('src/*.so')),
-        ('bin', ['bin/rectangle-props'])],
-    author = 'Matt McCormick',
+    name = "celllistsexample",
+    package_dir = {'': 'pycelllists'},
+    data_files = [(get_python_lib(), glob.glob('pycelllists/*.so')),
+                    ],
+    author = 'Toon Verstraelen & Matt Chan',
     description = 'Use the CMake build system to make Cython modules.',
-    license = 'Apache',
+    license = 'GPLv3',
     keywords = 'cmake cython build',
-    url = 'http://github.com/thewtex/cython-cmake-example',
-    test_require = ['nose'],
+    url = 'https://github.com/QuantumElephant/celllists',
     zip_safe = False,
     )

@@ -33,6 +33,7 @@ Build (for installation in home directory):
 Testing (in the build directory):
 
     make check
+    make test
 
 Install:
 
@@ -42,13 +43,6 @@ Install:
 Installation of ``python-celllists``
 ====================================
 
-In-place build and test
-
-    cd python-celllists
-    ./setup.py build_ext -i -L${LD_LIBRARY_PATH}
-    nosetests -v
-
 Build and install (into home directory):
 
-    ./setup.py build_ext -L${LD_LIBRARY_PATH}
     ./setup.py install --user

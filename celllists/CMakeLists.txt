@@ -53,6 +53,9 @@ add_library(celllists SHARED ${SOURCE_FILES})
 set_property(TARGET celllists PROPERTY VERSION ${CELLLISTS_VERSION})
 set_property(TARGET celllists PROPERTY SOVERSION ${CELLLISTS_SOVERSION})
 
+# Set external libraries for linking
+set(CYTHON_LINK ${PYTHON_LIBRARIES} celllists PARENT_SCOPE)
+
 # Install include files
 install (FILES ${HEADER_FILES} DESTINATION include/celllists)
 
@@ -61,3 +64,5 @@ install (TARGETS celllists DESTINATION lib)
 
 # Unit Tests with Google testing framework
 add_subdirectory(tests)
+
+

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # CellList is a 3D domain decomposition library.
 # Copyright (C) 2011-2015 The CellList Development Team
@@ -18,6 +19,21 @@
 # along with this program; if not, see <http://www.gnu.org/licenses/>
 #
 #--
+'''Unit tests'''
 
 
-from celllists import *
+from pycelllists import *
+
+import numpy as np
+
+
+def test_subcell():
+    c = Cell(np.random.uniform(-10, 10, (3, 3)))
+    sc, shape = c.subcell(0.1)
+    assert sc.spacings.max() < 0.1
+
+
+def test_reciprocal():
+    c = Cell(np.random.uniform(-10, 10, (3, 3)))
+    gc = c.reciprocal()
+    assert abs(np.dot(c.vecs, gc.vecs.T) - np.identity(3)).max() < 1e-3

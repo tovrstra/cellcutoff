@@ -22,7 +22,7 @@
 '''Unit tests'''
 
 
-from pycelllists import *
+from celllists import *
 
 import numpy as np
 

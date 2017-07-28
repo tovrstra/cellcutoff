@@ -64,5 +64,3 @@ install (TARGETS celllists DESTINATION lib)
 
 # Unit Tests with Google testing framework
 add_subdirectory(tests)
-
-

@@ -6,7 +6,7 @@ import glob
 import os
 import sys
 
-if os.path.exists('README.md'):
+if os.path.exists('../README.md'):
     print("""The setup.py script should be executed from the build directory.
 
 Please see the file 'README.md' for further instructions.""")
@@ -14,10 +14,10 @@ Please see the file 'README.md' for further instructions.""")
 
 
 setup(
-    name = "celllistsexample",
-    package_dir = {'': 'pycelllists'},
-    data_files = [(get_python_lib(), glob.glob('pycelllists/*.so')),
-                    ],
+    name = "celllists",
+    #package_dir = {'': 'celllists'},
+    packages = ['celllists'],
+    data_files = [(get_python_lib() + '/celllists', ['celllists/celllists.so'])],
     author = 'Toon Verstraelen & Matt Chan',
     description = 'Use the CMake build system to make Cython modules.',
     license = 'GPLv3',

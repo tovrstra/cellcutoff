@@ -1,0 +1,9 @@
+analyzers:
+ - cpplint: true
+   include: ["*.cpp", "*.h", "*.hpp", "*.c"]
+   path: ./src/
+   filters:
+   - -whitespace
+   - +whitespace/braces
+   style: google # webkit | google
+ - flake8: true
